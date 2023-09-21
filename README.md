@@ -7,10 +7,10 @@ I aspire to create a website to blog and allow people to blog promoting themselv
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
-app = Flask(__name__)
+app = Flask('Business Done')
 
 # Initialize the SQLite database
-conn = sqlite3.connect('blog.db')
+conn = sqlite3.connect('blog.bd')
 conn.execute('''
     CREATE TABLE IF NOT EXISTS posts (
         id INTEGER PRIMARY KEY,
@@ -57,5 +57,5 @@ def add_comment(post_id):
     conn.close()
     return redirect(url_for('post', post_id=post_id))
 
-if __name__ == '__main__':
+if 'Business Done' == '__main__':
     app.run(debug=True)
